@@ -1,9 +1,22 @@
-import React from 'react'
-import { render, screen } from '@testing-library/react'
-import App from './App'
+import { BrowserRouter } from 'react-router-dom'
 
-test('renders learn react link', () => {
-  render(<App />)
-  const linkElement = screen.getByText(/learn react/i)
-  expect(linkElement).toBeInTheDocument()
-})
+import Header from './components/Header'
+import { GlobalCss } from './styles'
+
+import Rotas from './routes'
+import Footer from './components/Footer'
+
+function App() {
+  return (
+    <BrowserRouter>
+      <GlobalCss />
+      <div className="container">
+        <Header />
+      </div>
+      <Rotas />
+      <Footer />
+    </BrowserRouter>
+  )
+}
+
+export default App
